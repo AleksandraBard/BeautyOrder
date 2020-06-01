@@ -1,4 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from './store/index'
+import {Router} from 'react-router-dom'
+import App from './app'
+import history from './history'
 
-ReactDOM.render(<div>Hello, world!</div>, document.getElementById("app"));
+ReactDOM.render(
+  <Provider store={store}>
+    <Router history={history}>
+        <App />
+    </Router>
+  </Provider>,
+  document.getElementById("app")
+);
